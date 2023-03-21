@@ -1,3 +1,4 @@
+# this is a comment
 def encoder(num):
     string = " "
     for i in range(len(num)):
