@@ -1,9 +1,17 @@
-# this is a comment
+# this is a comment from Xinchen Yao
 def encoder(num):
-    string = " "
+    string = ""
     for i in range(len(num)):
         string += str((int(num[i]) + 3) % 10)
     return string
+
+
+def decoder(encoded_password):
+    password = ""
+    for digit in encoded_password:
+        original_digit = str((int(digit) - 3) % 10)  # shift down by 3
+        password += original_digit
+    return password
 
 
 def main():
@@ -21,9 +29,10 @@ def main():
             encoded_password = encoder(num)
             print("Your password has been encoded and stored! ")
         if choices == 2:
-            print(
-                f"The encoded password is {encoded_password}, and the original password is .")
-            pass
+
+            password = decoder(encoded_password)
+            print(f"The encoded password is {encoded_password}, and the original password is {password}.")
+
         if choices == 3:
             break
 
